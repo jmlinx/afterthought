@@ -1,0 +1,13 @@
+name: afterthought
+channels:
+  - conda-forge
+dependencies:
+  - python
+  - pip>19.0
+  - numpy
+  - scipy
+  - pandas
+  - jupyter
+  - jupyterlab
+  - bqplot
+  - voila
