@@ -10,4 +10,7 @@ dependencies:
   - jupyter
   - jupyterlab
   - bqplot
+  - matplotlib
   - voila
+  - empyrical
+  - tqdm
