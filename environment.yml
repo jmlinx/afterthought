@@ -2,7 +2,7 @@ name: afterthought
 channels:
   - conda-forge
 dependencies:
-  - python
+  - python = 3.8
   - pip>19.0
   - numpy
   - scipy
