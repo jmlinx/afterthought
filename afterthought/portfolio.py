@@ -3,6 +3,8 @@ import pandas as pd
 import datetime as dt
 import pickle
 import bz2
+import warnings
+warnings.filterwarnings('ignore')
 from .analyzer import summarize_returns
 
 
@@ -78,17 +80,17 @@ class Portfolio():
         self._relative_drawdown = pd.Series(0, index=[inception])
         
         # series
-        self.nav_open = pd.Series()
-        self.nav_close = pd.Series()
-        self.cash_open = pd.Series()
-        self.cash_close = pd.Series() 
-        self.security_open = pd.Series()                         
-        self.security_close =  pd.Series()
-        self.max_nav = pd.Series()
-        self.drawdown_open = pd.Series()
-        self.drawdown_close = pd.Series()
-        self.relative_drawdown_open = pd.Series()
-        self.relative_drawdown_close = pd.Series()
+        self.nav_open = pd.Series(dtype=float)
+        self.nav_close = pd.Series(dtype=float)
+        self.cash_open = pd.Series(dtype=float)
+        self.cash_close = pd.Series(dtype=float)
+        self.security_open = pd.Series(dtype=float)
+        self.security_close =  pd.Series(dtype=float)
+        self.max_nav = pd.Series(dtype=float)
+        self.drawdown_open = pd.Series(dtype=float)
+        self.drawdown_close = pd.Series(dtype=float)
+        self.relative_drawdown_open = pd.Series(dtype=float)
+        self.relative_drawdown_close = pd.Series(dtype=float)
         
         # dataframes
         self.shares_open = pd.DataFrame(columns=self.components)
