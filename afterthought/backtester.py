@@ -6,10 +6,9 @@ from tqdm import tqdm
 from .portfolio import Portfolio
 from .selector import Selector
 from .allocator import Allocator
-# from .controller import Controller
-from .trigger import *  # pylint: disable=W0614
+from .trigger import * 
 
-class Backtestor():
+class Backtester():
     """
     Backtestor is used to perform backtesting algorithm. At the initialization,
     method, Trigger, Allocator must be sepecified. Initializating the
@@ -108,8 +107,8 @@ class Backtestor():
                 price_slice = price_df.loc[:time].tail(self.window_lookback)
 
                 if self.selector:
-                     universe = self.selector(price_slice)
-                     price_slice = price_slice[universe]
+                     selected = self.selector(price_slice)
+                     price_slice = price_slice.loc[:, selected]
 
                 weight = self.allocator(price_slice)
 
